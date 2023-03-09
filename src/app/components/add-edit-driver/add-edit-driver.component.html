@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-lg-4 offset-lg-4">
+    <div class="card border-primary mb-3" style="max-width: 18rem;">
+      <div class="card-header text-center">Crear Conductor</div>
+      <div class="card-body">
+        <form  [formGroup]="form" (ngSubmit)="addDriver()">
+          <input formControlName="lastname" type="text" class="form-control " placeholder="Ingrese lastname">
+          <span *ngIf="form.get('lastname')?.hasError('required') && form.get('lastname')?.touched" >
+            El Campo nombre es <strong>Requerido</strong> </span>
+          <input formControlName="firstname" type="text" class="form-control mt-2" placeholder="Ingrese firstname">
+          <span *ngIf="form.get('firstname')?.hasError('required')&& form.get('firstname')?.touched" >
+            El Campo nombre es <strong>Requerido</strong> </span>
+          <input formControlName="ssd" type="text" class="form-control  mt-2" placeholder="Ingrese ssd">
+          <span *ngIf="form.get('ssd')?.hasError('required')&& form.get('ssd')?.touched " >
+            El Campo nombre es <strong>Requerido</strong> </span>
+          <input formControlName="adress" type="text" class="form-control  mt-2" placeholder="Ingrese adress">
+          <span *ngIf="form.get('adress')?.hasError('required')&& form.get('adress')?.touched " >
+            El Campo nombre es <strong>Requerido</strong> </span>
+          <input formControlName="city" type="text" class="form-control  mt-2" placeholder="Ingrese city">
+          <span *ngIf="form.get('city')?.hasError('required') && form.get('city')?.touched" >
+            El Campo nombre es <strong>Requerido</strong> </span>
+          <input formControlName="phone" type="number" class="form-control  mt-2" placeholder="Ingrese phone">
+          <span *ngIf="form.get('phone')?.hasError('required') && form.get('phone')?.touched" >
+            El Campo nombre es <strong>Requerido</strong> </span>
+          <div class="row mt-2 text-center">
+            <div class="col-lg-6">
+              <button type="button" class="btn btn-primary">Aceptar</button>
+            </div>
+            <div class="col-lg-6">
+              <button [disabled]="form.invalid" type="button" routerLink="/driver" class="btn btn-success">Volver</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
